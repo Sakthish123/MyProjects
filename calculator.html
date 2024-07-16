@@ -1,37 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>calci</title>
-  <link rel="stylesheet" href="style.css">
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calci</title>
+    <style>
+        .demo1{
+            font-family: cursive;
+            border: solid 2px ;
+            width:300px;
+            background-color: rgb(255, 230, 2);
+            border-radius: 5%;
+        }
+        #div-tag1{
+            border: solid 2px;
+            width: 300px;
+            height: 400px;
+            background-color: rgb(166, 238, 152);
+            border-radius: 5%;
+        }
+        #display{
+            border: solid 2px black;
+            width: 265px;
+            height: 37px; 
+            background-color: rgb(83, 82, 82);
+            color:white;
+            text-align: right;
+            padding-right: 5px;
+            padding-top: 10px;
+            margin-bottom:10%;
+            font-family: cursive;
+        }
+        button{
+            width:60px;
+            height:60px;
+            margin: 3px;
+            border-radius: 10%;
+            
+            border: solid 2px;
+            font-size: large;
+        }
+        button:hover{
+            background-color: rgb(201, 201, 201);
+        }
+    </style>
 </head>
-
 <body>
-  <center>
-    <h1 class="demo1">Calculator</h1>
+    <center><h1 class="demo1">Calculator</h1>
     <div id="div-tag1">
-      <h2 id="display"></h2>
-      <button onclick="Click('7')">7</button>
-      <button onclick="Click('8')">8</button>
-      <button onclick="Click('9')">9</button>
-      <button onclick="Click('/')">/</button><br>
-      <button onclick="Click('4')">4</button>
-      <button onclick="Click('5')">5</button>
-      <button onclick="Click('6')">6</button>
-      <button onclick="Click('x')">x</button><br>
-      <button onclick="Click('1')">1</button>
-      <button onclick="Click('2')">2</button>
-      <button onclick="Click('3')">3</button>
-      <button onclick="Click('-')">-</button><br>
-      <button onclick="Clear('C')">C</button>
-      <button onclick="Click('0')">0</button>
-      <button onclick="Calculate()">=</button>
-      <button onclick="Click('+')">+</button><br>
+       <h2 id="display"></h2>
+       <button id="b7" onclick="Calculate('7')">7</button>
+       <button id="b8" onclick="Calculate('8')">8</button>
+       <button id="b9" onclick="Calculate('9')">9</button>
+       <button id="b/" onclick="Calculate('/')">/</button><br>
+       <button id="b5" onclick="Calculate('4')">4</button>
+       <button id="b6" onclick="Calculate('5')">5</button>
+       <button id="b7" onclick="Calculate('6')">6</button>
+       <button id="bx" onclick="Calculate('x')">x</button><br>
+       <button id="b3" onclick="Calculate('1')">1</button>
+       <button id="b2" onclick="Calculate('2')">2</button>
+       <button id="b1" onclick="Calculate('3')">3</button>
+       <button id="b-" onclick="Calculate('-')">-</button><br>
+       <button id="bC" onclick="Calculate('C')">C</button>
+       <button id="b0" onclick="Calculate('0')">0</button>
+       <button id="b=" onclick="Calculate('=')">=</button>
+       <button id="b+" onclick="Calculate('+')">+</button><br>
     </div>
-  </center>
+    </center>
+    <script>
+      let str="";
+      let result=0,op='+';
+      function Calculate(n){
+        if(n=='C'){
+          str="";
+        }
+        else if(n!='='){
+          if(n=='+'||n=='-'||n=='/'||n=='x'||str[str.length-1]=='+'||str[str.length-1]=='-'||str[str.length-1]=='/'||str[str.length-1]=='x')
+            str+=' ';
+          str+=n;
+        }
+        else{
+            S=str.split(' ');
+            for(let i=0;i<S.length;i++){
+                if(S[i]=='+'||S[i]=='-'||S[i]=='/'||S[i]=='x')
+                  op=S[i];
+                else{
+                    if(op=='+')
+                      result+=Number(S[i]);
+                    else if(op=='-')
+                      result-=Number(S[i]);
+                    else if(op=='/')
+                      result/=Number(S[i]);
+                    else if(op=='x')
+                      result*=Number(S[i]);
+                }
+            }
+            str=""+result;
+            result=0;
+            op='+';
+        }
+        document.getElementById("display").innerHTML=str; 
+      }
+    </script>
 </body>
-<script src="script.js"></script>
 </html>
+
