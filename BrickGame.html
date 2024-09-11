@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle Game</title>
+
+  
+    <style>
+        td{
+            background-color: rgb(255, 255, 255);
+            width: 30px;
+            height: 30px;
+            color:transparent;
+        }
+        table{
+            border-color: white;
+        }
+        body {
+        font-family: 'Arial Narrow', sans-serif;
+        background-color: #000;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+    }
+    .container1 {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #222;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border: 2px solid #333;
+    }
+    h1 {
+        font-family: cursive;
+        text-align: center;
+        color: #f0f;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+    }
+        #myInput{
+          
+          position: absolute;
+          left: -9999px;
+        }
+    </style> 
+
+  
+</head>
+<body>
+  <div class="container">
+    <!-- <h1 hidden id="demo"></h1> -->
+  </div>
+    <br>
+    <br><center>
+    <table border="1">
+        <tr><td id="1,1">0</td><td id="1,2">0</td><td id="1,3">0</td><td id="1,4">0</td><td id="1,5">0</td><td id="1,6">0</td><td id="1,7">0</td><td id="1,8">0</td><td id="1,9">0</td><td id="1,10">0</td><td id="1,11">0</td><td id="1,12">0</td><td id="1,13">0</td><td id="1,14">0</td></tr>
+        <tr><td id="2,1">0</td><td id="2,2">0</td><td id="2,3">0</td><td id="2,4">0</td><td id="2,5">0</td><td id="2,6">0</td><td id="2,7">0</td><td id="2,8">0</td><td id="2,9">0</td><td id="2,10">0</td><td id="2,11">0</td><td id="2,12">0</td><td id="2,13">0</td><td id="2,14">0</td></tr>
+        <tr><td id="3,1">0</td><td id="3,2">0</td><td id="3,3">0</td><td id="3,4">0</td><td id="3,5">0</td><td id="3,6">0</td><td id="3,7">0</td><td id="3,8">0</td><td id="3,9">0</td><td id="3,10">0</td><td id="3,11">0</td><td id="3,12">0</td><td id="3,13">0</td><td id="3,14">0</td></tr>
+        <tr><td id="4,1">0</td><td id="4,2">0</td><td id="4,3">0</td><td id="4,4">0</td><td id="4,5">0</td><td id="4,6">0</td><td id="4,7">0</td><td id="4,8">0</td><td id="4,9">0</td><td id="4,10">0</td><td id="4,11">0</td><td id="4,12">0</td><td id="4,13">0</td><td id="4,14">0</td></tr>
+        <tr><td id="5,1">0</td><td id="5,2">0</td><td id="5,3">0</td><td id="5,4">0</td><td id="5,5">0</td><td id="5,6">0</td><td id="5,7">0</td><td id="5,8">0</td><td id="5,9">0</td><td id="5,10">0</td><td id="5,11">0</td><td id="5,12">0</td><td id="5,13">0</td><td id="5,14">0</td></tr>
+        <tr><td id="6,1">0</td><td id="6,2">0</td><td id="6,3">0</td><td id="6,4">0</td><td id="6,5">0</td><td id="6,6">0</td><td id="6,7">0</td><td id="6,8">0</td><td id="6,9">0</td><td id="6,10">0</td><td id="6,11">0</td><td id="6,12">0</td><td id="6,13">0</td><td id="6,14">0</td></tr>
+        <tr><td id="7,1">0</td><td id="7,2">0</td><td id="7,3">0</td><td id="7,4">0</td><td id="7,5">0</td><td id="7,6">0</td><td id="7,7">0</td><td id="7,8">0</td><td id="7,9">0</td><td id="7,10">0</td><td id="7,11">0</td><td id="7,12">0</td><td id="7,13">0</td><td id="7,14">0</td></tr>
+        <tr><td id="8,1">0</td><td id="8,2">0</td><td id="8,3">0</td><td id="8,4">0</td><td id="8,5">0</td><td id="8,6">0</td><td id="8,7">0</td><td id="8,8">0</td><td id="8,9">0</td><td id="8,10">0</td><td id="8,11">0</td><td id="8,12">0</td><td id="8,13">0</td><td id="8,14">0</td></tr>
+        <tr><td id="9,1">0</td><td id="9,2">0</td><td id="9,3">0</td><td id="9,4">0</td><td id="9,5">0</td><td id="9,6">0</td><td id="9,7">0</td><td id="9,8">0</td><td id="9,9">0</td><td id="9,10">0</td><td id="9,11">0</td><td id="9,12">0</td><td id="9,13">0</td><td id="9,14">0</td></tr>
+        <tr><td id="10,1">0</td><td id="10,2">0</td><td id="10,3">0</td><td id="10,4">0</td><td id="10,5">0</td><td id="10,6">0</td><td id="10,7">0</td><td id="10,8">0</td><td id="10,9">0</td><td id="10,10">0</td><td id="10,11">0</td><td id="10,12">0</td><td id="10,13">0</td><td id="10,14">0</td></tr>
+        <tr><td id="11,1">0</td><td id="11,2">0</td><td id="11,3">0</td><td id="11,4">0</td><td id="11,5">0</td><td id="11,6">0</td><td id="11,7">0</td><td id="11,8">0</td><td id="11,9">0</td><td id="11,10">0</td><td id="11,11">0</td><td id="11,12">0</td><td id="11,13">0</td><td id="11,14">0</td></tr>
+        <tr><td id="12,1">0</td><td id="12,2">0</td><td id="12,3">0</td><td id="12,4">0</td><td id="12,5">0</td><td id="12,6">0</td><td id="12,7">0</td><td id="12,8">0</td><td id="12,9">0</td><td id="12,10">0</td><td id="12,11">0</td><td id="12,12">0</td><td id="12,13">0</td><td id="12,14">0</td></tr>
+        <tr><td id="13,1">0</td><td id="13,2">0</td><td id="13,3">0</td><td id="13,4">0</td><td id="13,5">0</td><td id="13,6">0</td><td id="13,7">0</td><td id="13,8">0</td><td id="13,9">0</td><td id="13,10">0</td><td id="13,11">0</td><td id="13,12">0</td><td id="13,13">0</td><td id="13,14">0</td></tr>
+        <tr><td id="14,1">0</td><td id="14,2">0</td><td id="14,3">0</td><td id="14,4">0</td><td id="14,5">0</td><td id="14,6">0</td><td id="14,7">0</td><td id="14,8">0</td><td id="14,9">0</td><td id="14,10">0</td><td id="14,11">0</td><td id="14,12">0</td><td id="14,13">0</td><td id="14,14">0</td></tr>
+        <tr><td id="15,1">0</td><td id="15,2">0</td><td id="15,3">0</td><td id="15,4">0</td><td id="15,5">0</td><td id="15,6">0</td><td id="15,7">0</td><td id="15,8">0</td><td id="15,9">0</td><td id="15,10">0</td><td id="15,11">0</td><td id="15,12">0</td><td id="15,13">0</td><td id="15,14">0</td></tr>    
+    </table></center>
+    <input type="text" id="myInput" >
+
+
+    <script>
+         document.getElementById('myInput').focus();
+         document.getElementById('myInput').addEventListener('keydown',handlekey);
+        
+          
+          var I=[0,0,0,0],J=[0,0,0,0];
+          
+          
+          exampleLoop();
+        
+        
+        
+        
+        function sleep(ms) {
+         return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        function Speed(){
+            if(I[3]<15&&check(1,0)){
+            for(let i=0;i<4;i++){
+              if(I[i]>0){
+              let v1=document.getElementById(I[i]+","+J[i]);
+              v1.style.backgroundColor="white";
+              v1.innerHTML="0";
+              }
+              I[i]+=1;
+            }
+            for(let i=0;i<4;i++)
+              if(I[i]>0){
+              let v2=document.getElementById(I[i]+","+J[i]);
+              v2.style.backgroundColor=col[k1];
+              v2.innerHTML="1";
+              }           
+            }
+        }
+
+
+        function move(n){
+            if(J[1]+n>=1&&J[3]+n<=14&&I[3]<=15&&check(0,n)){
+            for(let i=0;i<4;i++){
+              let v1=document.getElementById(I[i]+","+J[i]);
+              v1.style.backgroundColor="white";
+              J[i]+=n;
+              v1.innerHTML="0";
+            }
+            for(let i=0;i<4;i++){
+              let v2=document.getElementById(I[i]+","+J[i]);
+              v2.style.backgroundColor=col[k1];
+              v2.innerHTML="1";
+            }
+           }
+        }
+
+        function change(){
+          let t=I;
+          for(let i=0;i<I.length;i++){
+            for(let j=0;j<I[i].length;j++)
+              t[i][j]=I[j][i];
+          }
+          I=t;
+        }
+        
+        function check(no1,no2){
+          for(let i=0;i<4;i++){
+            if(I[i]>0){
+            if(document.getElementById((I[i]+no1)+","+(J[i]+no2)).textContent=="2")
+              return false;
+            }
+          }
+          return true;
+        }
+        //let k=0,col=[""];
+        let peak=16; 
+        
+        async function exampleLoop(){
+          var I1=[[-3,-2,-2,-1],[-1,-1,-1,-1,],[-2,-2,-2,-1],[-2,-1,-1,-1],[-2,-2,-1,-1],[-2,-1,-2,-1],[-4,-3,-2,-1],[-3,-2,-1,-1]],J1=[[7,6,7,6],[5,6,7,8],[6,7,8,7],[7,6,7,8],[8,7,8,9],[7,7,8,8],[7,7,7,7],[7,7,7,8]];
+          col=["yellow","blue","pink","cyan","violet","green","blue","green"];
+          k1=Math.floor(Math.random()*8);
+          k=Math.floor(Math.random()*8);
+          I=I1[k];
+          J=J1[k];
+        while(I[3]<15&&check(1,0)){
+          /*check=0;
+          for(let i=0;i<4;i++){
+            if(document.getElementById((I[k][i]+1)+","+J[k][i]).textContent=="2")
+            {check=1;
+             break;
+            }
+          }
+          if(check==1)
+            break;*/
+            for(let i=0;i<10;i++){
+              if(I[i]>0){
+              let v1=document.getElementById(I[i]+","+J[i]);
+              v1.style.backgroundColor="white";
+              v1.innerHTML="0";
+              }
+              I[i]+=1;
+            }
+            for(let i=0;i<4;i++)
+              if(I[i]>0){
+              let v2=document.getElementById(I[i]+","+J[i]);
+              v2.style.backgroundColor=col[k1];
+              v2.innerHTML="1";
+              }
+              await sleep(400);
+            }
+            for(let i=0;i<4;i++){
+              let obj=document.getElementById(I[i]+","+J[i]);
+              obj.innerHTML="2";
+              obj.style.backgroundColor="red";
+            }
+            if(I[0]<peak)
+              peak=I[0];
+            for(let i=I[0];i<=I[3];i++){
+              // document.getElementById("demo").innerHTML=""+i;
+              // await sleep(400);
+            
+              let j;
+              for(j=1;j<=14;j++){
+                if(document.getElementById(i+","+j).textContent!="2")
+                  break;
+              }
+              if(j==15)
+                 eliminate(i);
+                // document.getElementById("demo").innerHTML="full";
+                // await sleep(400);
+                // document.getElementById("demo").innerHTML="";
+              
+            }
+            exampleLoop();
+          }
+        
+        function eliminate(row){
+          for(let i=row;i>peak;i--){
+            for(let j=1;j<=14;j++){
+              var obj1=document.getElementById(i+","+j);
+              var obj2=document.getElementById((i-1)+","+j);
+              
+              if(obj1.textContent==obj2.textContent)
+                 continue;
+              
+                obj1.innerHTML=obj2.textContent;
+              if(obj1.textContent=="2")
+                obj1.style.backgroundColor="red";
+              else
+                obj1.style.backgroundColor="white";
+            }
+          }
+          for(let j=1;j<=14;j++){
+            var obj=document.getElementById(peak+","+j);
+            if(obj.textContent=="2"){
+            obj.innerHTML="0";
+            obj.style.backgroundColor="white";}
+          }
+        }
+
+         
+        function handlekey(event){
+          if(event.key=="ArrowDown")
+            Speed();
+          else if(event.key=="ArrowLeft")
+            move(-1);
+          else if(event.key=="ArrowRight")
+            move(1);
+          else if(event.key=="ArrowUp")
+            change();
+        }
+
+    </script>
+
+  
+</body>
+</html>
