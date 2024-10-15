@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            border: solid transparent 3px;
+            background-color: black;
+            width: 3px;
+            height: 15px;
+            border-radius: 100%;
+            margin: 40px;
+        }
+        #heading{
+            text-align: center;
+        }
+        #frame{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading">Edge</h1>
+    <br>
+    <div id="frame">
+        <button id="0,0" onclick="Myfun(0,0)"></button>
+        <button id="0,1" onclick="Myfun(0,1)"></button>
+        <button id="0,2" onclick="Myfun(0,2)"></button>
+        <button id="0,3" onclick="Myfun(0,3)"></button><br>
+        <button id="1,0" onclick="Myfun(1,0)"></button>
+        <button id="1,1" onclick="Myfun(1,1)"></button>
+        <button id="1,2" onclick="Myfun(1,2)"></button>
+        <button id="1,3" onclick="Myfun(1,3)"></button><br>
+        <button id="2,0" onclick="Myfun(2,0)"></button>
+        <button id="2,1" onclick="Myfun(2,1)"></button>
+        <button id="2,2" onclick="Myfun(2,2)"></button>
+        <button id="2,3" onclick="Myfun(2,3)"></button><br>
+        <button id="3,0" onclick="Myfun(3,0)"></button>
+        <button id="3,1" onclick="Myfun(3,1)"></button>
+        <button id="3,2" onclick="Myfun(3,2)"></button>
+        <button id="3,3" onclick="Myfun(3,3)"></button><br>
+    </div>
+    <script>
+        var count=0,I=0,J=0;
+        function Myfun(i,j){
+            if(count==1){
+              if(((J+1==j)&&(I==i))||((I+1==i)&&(J==j))||((J-1==j)&&(I==i))||((I-1==i)&&(J==j)))
+              {
+                document.getElementById(i+","+j).style.backgroundColor="red";
+                count=0;
+                I=0;
+                J=0;
+              }
+              else{
+                document.getElementById(I+","+J).style.backgroundColor="black";
+              I=i;
+              J=j;
+              }
+            }
+            else{
+            count++;
+            I=i;
+            J=j;
+            }
+            document.getElementById(i+","+j).style.backgroundColor="red";
+        }
+    </script>
+</body>
+</html>
